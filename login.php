@@ -1,4 +1,5 @@
 <?php require("inc/header.php"); ?>
+<div class="col-auto mx-auto text-center" id="content">
 <h1>Connexion</h1>
 <form action="login.php" method="post">
 	<div class="form-group">

@@ -17,4 +17,3 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-auto mx-auto text-center" id="content">
