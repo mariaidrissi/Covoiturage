@@ -7,7 +7,8 @@ $bdd = new Model(); ?>
 <div class="col-auto w-50 mx-auto text-left results" id="content">
 <h1>Trajet : <?php echo $_POST['depart']; ?> &raquo; <?php echo $_POST['arrivee']; ?></h1>
 <h2><?= $_POST['date'];?><br>
-<small><?= $_POST['heure'];?></small></h2><br>
+<small><?= $_POST['heure'];?></small></h2>
+<hr>
 <?php
 if(isset($_POST['depart'])) { 
 	

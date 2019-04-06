@@ -17,10 +17,24 @@
 }
 #content{
 	padding-top:2em;
+	min-height:80vh;
 }
 .results a{
 	color:black;
 }
 .results a:hover{
 	text-decoration: none;
+}
+
+/* Telephone */
+@media screen and (max-width: 767px) {
+	#content .btn{font-size: 5em;}
+}
+/* Tablettes */
+@media (min-width: 768px) and (max-width: 991px) {
+	#content .btn{font-size: 2em;}
+}
+/* tablets/desktops and up ----------- */
+@media (min-width: 992px) and (max-width: 1199px) {
+	#content .btn{font-size: 1.5em;}
 }

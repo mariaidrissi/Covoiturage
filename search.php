@@ -6,14 +6,14 @@
 		<div class="row">
 			<div class="col">
 				<label for="depart">Départ</label>
-				<select name="depart" id="depart" class="form-control">
+				<select name="depart" id="depart" class="form-control form-control-lg">
 					<option value='bf'>BF</option>
 					<option value='pg'>PG</option>
 				</select>
 			</div>
 			<div class="col">
 				<label for="arrivee">Arrivée</label>
-				<select name="arrivee" id="arrivee" class="form-control">
+				<select name="arrivee" id="arrivee" class="form-control form-control-lg">
 					<option value='pg'>PG</option>
 					<option value='bf'>BF</option>
 				</select>
@@ -22,9 +22,9 @@
 		<div class="row">
 			<div class="col">
 				<label for="date">Date</label>
-				<input type="date" name="date" id="date" class="form-control">
+				<input type="date" name="date" id="date" class="form-control form-control-lg">
 				<label for="time">Heure</label>
-				<input type="time" name="heure" id="heure" class="form-control">
+				<input type="time" name="heure" id="heure" class="form-control form-control-lg">
 			</div>
 		</div>
 	</div>
