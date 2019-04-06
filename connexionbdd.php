@@ -11,6 +11,8 @@
 		$this->db->query('SET NAMES utf8');
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         echo "ça marche gros";
-	}
+    }
+    
 }
+$bdd = new Model();
 ?>
