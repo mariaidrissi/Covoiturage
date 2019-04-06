@@ -5,7 +5,7 @@ CREATE TABLE Users(
 );
 
 CREATE TABLE Exceptionnel(
-    id int SERIAL,
+    id int AUTO_INCREMENT,
     depart varchar(50) NOT NULL,
     arrivee varchar(50) NOT NULL,
     places int NOT NULL,
@@ -25,10 +25,9 @@ CREATE TABLE Recurrents(
     places int NOT NULL,
     heure time NOT NULL,
     chauffeur varchar(50),
-    FOREIGN KEY(chauffeur) REFERENCES USERS(id), 
+    FOREIGN KEY(chauffeur) REFERENCES Users(id), 
     debut date NOT NULL, 
-    type varchar(50) NOT NULL IN
-    CHECK type IN ("quotidien", "hebdomadaire", "bi"), 
+    type enum('quotidien','hebdomadaire','bi') NOT NULL,
     jour varchar NOT NULL, 
     fin date
 );
@@ -37,16 +36,16 @@ CREATE TABLE Recurrents(
 CREATE TABLE PassagerExep (
     trajet varchar(50),
     passager varchar(50),
-    trajet FOREIGN KEY REFERENCES Exceptionnel(id),
-    passager FOREIGN KEY REFERENCES Users(id),
-    PRIMARY KEY(trajet,passager),
+    FOREIGN KEY (trajet) REFERENCES Exceptionnel(id),
+    FOREIGN KEY (passager) REFERENCES Users(id),
+    PRIMARY KEY(trajet,passager)
 );
 
 CREATE TABLE PassagerRec (
     trajet varchar(50),
     passager varchar(50),
-    trajet FOREIGN KEY REFERENCES Recurent(id),
-    passager FOREIGN KEY REFERENCES Users(id),
     debut date,
-    PRIMARY KEY(trajet,passager),
+    FOREIGN KEY (trajet) REFERENCES Recurents(id),
+    FOREIGN KEY (passager) REFERENCES Users(id),
+    PRIMARY KEY(trajet,passager)
 );
