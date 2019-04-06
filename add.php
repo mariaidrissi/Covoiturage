@@ -1,10 +1,10 @@
 <?php require("inc/header.php"); ?>
-<div class="col-auto w-50 mx-auto text-center" id="content">
+<div class="col-auto w-75 mx-auto text-center" id="content">
 <h1>Ajouter un covoiturage</h1>
 <form action="results.php" method="post">
 	<div class="form-group">
 		<div class="row">
-			<div class="col pl-0">
+			<div class="col p-0">
 				<label for="depart" class="my-2">Départ</label>
 				<select name="depart" id="depart" class="form-control">
 					<option value="bf">BF</option>
