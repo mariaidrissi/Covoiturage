@@ -1,4 +1,5 @@
 <?php require("inc/header.php"); ?>
+<div class="col-auto w-50 mx-auto text-center" id="content">
 <h1>Trajet : BF > PG</h1>
 <h2>Date : 05/12/19<br>
 <small>A partir de 08:00</small></h2><br>
