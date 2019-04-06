@@ -1,3 +1,9 @@
+DROP TABLE IF EXISTS PassagerRec;
+DROP TABLE IF EXISTS PassagerExep;
+DROP TABLE IF EXISTS Recurrents;
+DROP TABLE IF EXISTS Exceptionnel;
+DROP TABLE IF EXISTS Users;
+
 CREATE TABLE Users(
     id varchar(50),
     tel varchar(11),
