@@ -26,7 +26,7 @@ CREATE TABLE Recurrents(
     heure time NOT NULL, 
     FOREIGN KEY(chauffeur) REFERENCES USERS(id), 
     debut date NOT NULL, 
-    type varchar NOT NULL IN
+    type varchar NOT NULL,
     CHECK type IN ("quotidien", "hebdomadaire", "bi"), 
     jour varchar NOT NULL, 
     fin date
@@ -36,12 +36,12 @@ CREATE TABLE Recurrents(
 CREATE TABLE PassagerExep (
     trajet FOREIGN KEY REFERENCES Exceptionnel(id),
     passager FOREIGN KEY REFERENCES Users(id),
-    PRIMARY KEY(trajet,passager),
+    PRIMARY KEY(trajet,passager)
 );
 
 CREATE TABLE PassagerRec (
     trajet FOREIGN KEY REFERENCES Recurent(id),
     passager FOREIGN KEY REFERENCES Users(id),
     debut date,
-    PRIMARY KEY(trajet,passager),
+    PRIMARY KEY(trajet,passager)
 );
