@@ -58,5 +58,18 @@
 		return $req;
 	}
 
+	public function getExceptionnelByDateAndHour($jour, $heure) {
+		$trajets = $this->getExceptionnelByDate($jour);
+		$res = array();
+
+		foreach($trajets as $trajet) {
+			if($trajet['heure'] >= $heure) {
+				array_push($res, $trajet);
+			}
+		}
+
+		return $res;
+	}
+
 }
 ?>
