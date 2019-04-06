@@ -3,7 +3,7 @@
 
 	public function __construct() {
 		try {
-			$this->db = new PDO('pgsql:host=localhost;dbname=gova', 'youssef', 'labasedetest');
+			$this->db = new PDO('mysql:host=localhost;dbname=covoit', 'root', '');
 		} catch(PDOException $e) {
 			die('<p>La connexion à la base de données a échoué. Erreur['.$e->getCode().'] : ' . $e->getMessage().'</p>');
 		}
