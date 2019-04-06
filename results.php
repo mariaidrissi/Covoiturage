@@ -6,11 +6,12 @@ $bdd = new Model(); ?>
 
 <div class="col-auto w-50 mx-auto text-center" id="content">
 <h1>Trajet : BF > PG</h1>
-<h2>Date : 05/12/19<br>
+<h2><?= $_POST['date'];?><br>
 <small>A partir de 08:00</small></h2><br>
 <?php
 if(isset($_POST['depart'])) { 
-$trajets = $bdd->getAllTrajets();
+	
+$trajets = $bdd->getExceptionnelByDate($_POST['date']);
 foreach($trajets as $trajet) {
 ?>
 <div class="result mx-auto my-2 p-2 border rounded-lg">
