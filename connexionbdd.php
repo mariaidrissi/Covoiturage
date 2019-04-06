@@ -41,9 +41,18 @@
 	  }
 	}
 
-	public function getAllTrajets() {
+	public function getAllTrajetsExceptionnel() {
 		$sql = 'SELECT * FROM Exceptionnel';
 		$req = $this->db->prepare($sql);
+		$req->execute();
+		$req = $req->fetchAll();
+		return $req;
+	}
+
+	public function getExceptionnelByDate($jour) {
+		$sql = 'SELECT * FROM Exceptionnel WHERE jour=:jour';
+		$req = $this->db->prepare($sql);
+		$req->bindParam(':jour', $jour);
 		$req->execute();
 		$req = $req->fetchAll();
 		return $req;
