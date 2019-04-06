@@ -3,14 +3,13 @@
 
 	public function __construct() {
 		try {
-			$this->db = new PDO('pgsql:host=localhost:8889;dbname=covoit', 'root', '');
+			$this->db = new PDO('pgsql:host=localhost;dbname=gova', 'youssef', 'labasedetest');
 		} catch(PDOException $e) {
 			die('<p>La connexion à la base de données a échoué. Erreur['.$e->getCode().'] : ' . $e->getMessage().'</p>');
 		}
 
 		$this->db->query('SET NAMES utf8');
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "ça marche gros";
     }
 
 	public function insererUser($id) {
@@ -24,13 +23,16 @@
 		}
 	}
 
-	public function ajouterTrajet($arrivee, $depart, $nb_places, $heure) {
-	  $sql = 'INSERT INTO Trajet (arrivee,depart,nb_places,heure) VALUES (:arrivee,:depart,:nb_places,:heure)';
+	public function ajouterTrajetExceptionnel($id, $arrivee, $depart, $nb_places, $heure, $jour, $chauffeur) {
+	  $sql = 'INSERT INTO Exceptionnel VALUES (:id, :depart, :arrivee, :places, :heure, :jour, :chauffeur)';
 	  $req = $this->db->prepare($sql);
+	  $req->bindParam(':id', $id);
 	  $req->bindParam(':arrivee', $arrivee);
 	  $req->bindParam(':depart', $depart);
-	  $req->bindParam(':nb_places', $nb_places);
+	  $req->bindParam(':places', $nb_places);
 	  $req->bindParam(':heure', $heure);
+	  $req->bindParam(':jour', $jour);
+	  $req->bindParam(':chauffeur', $chauffeur);
 
 	  if ($req->execute() == TRUE) {
 	    echo "Nouveau trajet ajouté";
@@ -39,9 +41,13 @@
 	  }
 	}
 
+	public function getAllTrajets() {
+		$sql = 'SELECT * FROM Exceptionnel';
+		$req = $this->db->prepare($sql);
+		$req->execute();
+		$req = $req->fetchAll();
+		return $req;
+	}
+
 }
-$bdd = new Model();
-echo "lol";
-$bdd->insererUser("lol");
-$bdd->ajouterTrajet(BF,PG, 3, 15:30);
 ?>
