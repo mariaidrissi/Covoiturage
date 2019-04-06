@@ -4,14 +4,14 @@
 <form action="results.php" method="post">
 	<div class="form-group">
 		<div class="row">
-			<div class="col">
+			<div class="col pl-0">
 				<label for="depart" class="my-2">Départ</label>
 				<select name="depart" id="depart" class="form-control">
 					<option value="bf">BF</option>
 					<option value="pg">PG</option>
 				</select>
 			</div>
-			<div class="col">
+			<div class="col pr-0">
 				<label for="arrivee" class="my-2">Arrivée</label>
 				<select name="arrivee" id="arrivee" class="form-control">
 					<option value="pg">PG</option>
@@ -45,16 +45,18 @@
 					<option value="bi">Bihebdomadaire</option>
 					<option value="quoti">Quotidien</option>
 				</select>
-				<label for="jourSemaine" class="my-2">Jour de la semaine</label>
-				<select name="jourSemaine" id="jourSemaine" class="form-control">
-					<option value="lundi">Lundi</option>
-					<option value="mardi">Mardi</option>
-					<option value="mercredi">Mercredi</option>
-					<option value="jeudi">Jeudi</option>
-					<option value="vendredi">Vendredi</option>
-					<option value="samedi">Samedi</option>
-					<option value="dimanche">Dimanche</option>
-				</select>
+				<div id="wrapJourSemaine" class="collapse show">
+					<label for="jourSemaine" class="my-2">Jour de la semaine</label>
+					<select name="jourSemaine" id="jourSemaine" class="form-control">
+						<option value="lundi">Lundi</option>
+						<option value="mardi">Mardi</option>
+						<option value="mercredi">Mercredi</option>
+						<option value="jeudi">Jeudi</option>
+						<option value="vendredi">Vendredi</option>
+						<option value="samedi">Samedi</option>
+						<option value="dimanche">Dimanche</option>
+					</select>
+				</div>
 				<label for="heure" class="my-2">Heure</label>
 				<input type="time" name="heure" id="heure" class="form-control">
 				<label for="dateDebut" class="my-2">Date de début</label>
@@ -79,9 +81,13 @@ $('#btnRecurrent').click(function(){
 		$('#exceptionnel').collapse('hide');
 	}
 });
-if($('#recurrence').val()=='quoti'){
-	$('#jourSemaine').hide();
-	console.log($('#jourSemaine').val());
-}
+$('#recurrence').change(function(){
+	if($('#recurrence').val()=='quoti'){
+		$('#wrapJourSemaine').collapse('hide');
+	}
+	if($('#wrapJourSemaine').hasClass('collapse') && $('#recurrence').val()!='quoti'){
+		$('#wrapJourSemaine').collapse('show');
+	}
+});
 </script>
 <?php require("inc/footer.php"); ?>
