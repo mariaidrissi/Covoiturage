@@ -1,8 +1,5 @@
-body{
-	overflow: hidden;
-}
 .container-fluid{
-	padding: 0;
+	overflow: hidden;
 }
 #header{
 	height:90px;
