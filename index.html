@@ -1,28 +1,4 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Covoit'UT</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col">
-				<div id="header">
-					<h1>Covoit'UT</h1>
-					<a href="login.php">Se connecter</a>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col" id="content">
-				<h1>Acceuil</h1>
-				<a href="add.php" class="btn btn-primary btn-lg" role="button">Proposer un trajet</a><br>
-				<a href="search.php" class="btn btn-primary btn-lg" role="button">Rechercher un trajet</a>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
+<?php require("inc/header.php"); ?>
+<a href="add.php" class="btn btn-primary btn-lg align-middle" role="button">Proposer un trajet</a><br>
+<a href="search.php" class="btn btn-primary btn-lg align-middle" role="button">Rechercher un trajet</a>
+<?php require("inc/footer.php"); ?>

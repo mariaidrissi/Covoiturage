@@ -1,3 +1,30 @@
+body{
+	overflow: hidden;
+}
 .container-fluid{
 	padding: 0;
+}
+#header{
+	height:90px;
+	line-height: 90px;
+}
+#header h1{
+	padding:0;
+	padding-left:25px;
+}
+#title{
+	color:#717070;
+}
+#title:hover{
+	text-decoration: none;
+}
+#content{
+	width:1024px;
+	padding-top:2em;
+}
+#content a{
+	margin:0.5em 0;
+}
+#content form label{
+	margin-top:1em;
 }
