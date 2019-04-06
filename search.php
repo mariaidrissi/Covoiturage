@@ -6,15 +6,15 @@
 			<div class="col">
 				<label for="depart">Départ</label>
 				<select name="depart" id="depart" class="form-control">
-					<option>BF</option>
-					<option>PG</option>
+					<option value='bf'>BF</option>
+					<option value='pg'>PG</option>
 				</select>
 			</div>
 			<div class="col">
 				<label for="arrivee">Arrivée</label>
 				<select name="arrivee" id="arrivee" class="form-control">
-					<option>PG</option>
-					<option>BF</option>
+					<option value='pg'>PG</option>
+					<option value='bf'>BF</option>
 				</select>
 			</div>
 		</div>
