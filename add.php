@@ -1,7 +1,7 @@
 <?php require("inc/header.php"); ?>
 <div class="col-auto w-75 mx-auto text-center" id="content">
 <h1>Ajouter un covoiturage</h1>
-<form action="results.php" method="post">
+<form action="add_script.php" method="post">
 	<div class="form-group">
 		<div class="row">
 			<div class="col p-0">
