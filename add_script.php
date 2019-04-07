@@ -2,7 +2,7 @@
 $bdd = new Model();
 print_r($_POST);
 $bdd->ajouterTrajetExceptionnel(
-    3,
+    4,
     $_POST['arrivee'],
     $_POST['depart'],
     $_POST['nb_places'],
